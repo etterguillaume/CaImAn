@@ -947,10 +947,10 @@ def get_file_size(file_name, var_name_hdf5=None):
         else:
             dims, T = zip(*[get_file_size(fn, var_name_hdf5=var_name_hdf5)
                 for fn in file_name])
-            if len(list(set(dims))) > 1:
-                raise Exception("Files have different FOV sizes.")
-            else:
-                dims = dims[0]
+            #if len(list(set(dims))) > 1:
+            #    raise Exception("Files have different FOV sizes.")
+            #else:
+            dims = dims[0]
     else:
         raise Exception('Unknown input type')
     return dims, T
