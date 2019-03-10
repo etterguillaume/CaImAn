@@ -270,7 +270,7 @@ def save_portion(pars):
         del big_mov
     else:
         with open(big_mov, 'r+b') as f:
-            f.seek(idx_start * np.uint64(Yr_tot.dtype.itemsize) * tot_frames)
+            f.seek(idx_start * int(Yr_tot.dtype.itemsize) * tot_frames)
             f.write(Yr_tot)
             computed_position = idx_end * np.uint64(Yr_tot.dtype.itemsize) * tot_frames
             if f.tell() != computed_position:
